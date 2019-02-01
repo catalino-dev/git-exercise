@@ -21,6 +21,11 @@ Allows you to manipulate two values and perform mathematical operations
 |`operator` |String | The operator to use: `ADD`, `SUBTRACT`, `MULTIPLY`| required   | 
 
 Exercise I:
-1. Create a branch that handles the operation for trigonometry functions (`SINE`, `COSINE` and `TANGENT`)
+1. Create a branch that handles the operation for trigonometry functions (`SINE`, `COSINE`)
 2. Open a pull request (to be reviewed)
-3. After an approval, merge the branch to `feature/implement-division-operator`
+3. After an approval, merge the branch to `develop`
+
+Exercise II:
+1. Create a branch that handles the operation for trigonometry functions (`TANGENT`, `COTANGENT`)
+2. Open a pull request (to be reviewed)
+3. After an approval, merge the branch to `develop`
