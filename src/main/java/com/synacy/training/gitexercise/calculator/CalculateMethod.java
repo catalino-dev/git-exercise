@@ -26,6 +26,14 @@ public enum CalculateMethod {
             double b = Double.valueOf(args[1]);
             return String.valueOf(a * b);
         }
+    },
+    DIVIDE {
+        @Override
+        public String calculate(String[] args) {
+            double a = Double.valueOf(args[0]);
+            double b = Double.valueOf(args[1]);
+            return String.valueOf(a / b);
+        }
     };
 
     public abstract String calculate(String[] args);
