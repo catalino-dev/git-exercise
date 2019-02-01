@@ -9,17 +9,17 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class CalculatorController {
 
     @GetMapping(value = { "/", "/index" })
-    public String index(@RequestParam(value="value1", required=false) String value1,
+    public String index(@RequestParam(value="value1", required=false)  String value1,
                         @RequestParam(value = "value2", required = false) String value2,
                         @RequestParam(value = "operator", required = false) String operator,
                         Model model) {
 
         if (value1 != null && value2 != null && operator != null) {
-            double a = Double.valueOf(value1);
-            double b = Double.valueOf(value2);
+            CalculateMethod method = CalculateMethod.of(operator);
+            String[] parameters = new String[] { value1, value2 };
 
-            if (operator.equalsIgnoreCase("ADD")) {
-                String result = String.valueOf(a + b);
+            if (method != null) {
+                String result = method.calculate(parameters);
                 model.addAttribute("result", result);
             }
         }
