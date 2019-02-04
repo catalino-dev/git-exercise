@@ -65,6 +65,13 @@ public enum CalculateMethod {
             double a = Double.valueOf(args[0] + args[1]);
             double b = Double.valueOf(Math.toRadians(a));
             return String.valueOf(1.0 / Math.tan(b));
+    },
+    POWER_OF_2 {
+        @Override
+        public String calculate(String[] args) {
+            double a = Double.valueOf(args[0]);
+            double b = Double.valueOf(args[1]);
+            return String.valueOf(Math.pow(a, b));
         }
     };
 
