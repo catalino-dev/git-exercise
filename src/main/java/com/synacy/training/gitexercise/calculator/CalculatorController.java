@@ -44,7 +44,36 @@ public class CalculatorController {
                     }
                 }
             }
-            else if (operator.equals("COSINE")) {
+            if (operator.equals("COSINE")) {
+                if (value1 != null && value2 == null) {
+                    CalculateMethod method = CalculateMethod.of(operator);
+                    String[] parameters = new String[] {value1, "0"};
+
+                    if (method != null) {
+                        String result = method.calculate(parameters);
+                        model.addAttribute("result", result);
+                    }
+                }
+                else if (value1 == null && value2 != null) {
+                    CalculateMethod method = CalculateMethod.of(operator);
+                    String[] parameters = new String[] {"0", value2};
+
+                    if (method != null) {
+                        String result = method.calculate(parameters);
+                        model.addAttribute("result", result);
+                    }
+                }
+                else {
+                    CalculateMethod method = CalculateMethod.of(operator);
+                    String[] parameters = new String[] {value1, value2};
+
+                    if (method != null) {
+                        String result = method.calculate(parameters);
+                        model.addAttribute("result", result);
+                    }
+                }
+            }
+            if (operator.equals("TAN")) {
                 if (value1 != null && value2 == null) {
                     CalculateMethod method = CalculateMethod.of(operator);
                     String[] parameters = new String[] {value1, "0"};
