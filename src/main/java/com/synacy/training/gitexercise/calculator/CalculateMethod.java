@@ -74,6 +74,14 @@ public enum CalculateMethod {
             double b = Double.valueOf(Math.toRadians(a));
             return String.valueOf(1.0 / Math.tan(b));
         }
+    },
+    TEST {
+        @Override
+        public  String calculate(String[] args) {
+            double a = Double.valueOf(args[0] + args[1]);
+            double b = Double.valueOf(Math.toRadians(a));
+            return String.valueOf(a + b);
+        }
     };
 
     public abstract String calculate(String[] args);
