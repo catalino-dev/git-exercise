@@ -34,6 +34,14 @@ public enum CalculateMethod {
             double b = Double.valueOf(args[1]);
             return String.valueOf(a / b);
         }
+    },
+    POWER_OF_2 {
+        @Override
+        public String calculate(String[] args) {
+            double a = Double.valueOf(args[0]);
+            double b = Double.valueOf(args[1]);
+            return String.valueOf(Math.pow(a, b));
+        }
     };
 
     public abstract String calculate(String[] args);
