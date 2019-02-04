@@ -35,6 +35,14 @@ public enum CalculateMethod {
             return String.valueOf(a / b);
         }
     },
+    POWER_OF_2 {
+        @Override
+        public String calculate(String[] args) {
+            double a = Double.valueOf(args[0]);
+            double b = Double.valueOf(args[1]);
+            return String.valueOf(Math.pow(a, b));
+        }
+    },
     SINE {
         @Override
         public  String calculate(String[] args) {
@@ -50,6 +58,29 @@ public enum CalculateMethod {
             double b = Double.valueOf(Math.toRadians(a));
             return String.valueOf(Math.cos(b));
         },
+    POWER_OF_2 {
+        @Override
+        public String calculate(String[] args) {
+            double a = Double.valueOf(args[0]);
+            double b = Double.valueOf(args[1]);
+            return String.valueOf(Math.pow(a, b));
+        }
+    },
+    TAN {
+        @Override
+        public  String calculate(String[] args) {
+            double a = Double.valueOf(args[0] + args[1]);
+            double b = Double.valueOf(Math.toRadians(a));
+            return String.valueOf(Math.tan(b));
+        }
+    },
+    COTAN {
+        @Override
+        public  String calculate(String[] args) {
+            double a = Double.valueOf(args[0] + args[1]);
+            double b = Double.valueOf(Math.toRadians(a));
+            return String.valueOf(1.0 / Math.tan(b));
+    },
     POWER_OF_2 {
         @Override
         public String calculate(String[] args) {
