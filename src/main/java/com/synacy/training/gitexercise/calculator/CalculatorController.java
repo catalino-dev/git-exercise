@@ -14,7 +14,7 @@ public class CalculatorController {
                         @RequestParam(value = "operator", required = false) String operator,
                         Model model) {
 
-        if (value1 != null && value2 != null && operator != null) {
+        if (operator != null) {
             if (operator.equals("SINE")) {
                 if (value1 != null && value2 == null) {
                     CalculateMethod method = CalculateMethod.of(operator);
