@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class CalculatorController {
 
     @GetMapping(value = { "/", "/index" })
-    public String index(@RequestParam(value="value1", required=false)  String value1,
-                        @RequestParam(value = "value2", required = false) String value2,
+    public String index(@RequestParam(value="value1", required=false, defaultValue = "0")  String value1,
+                        @RequestParam(value = "value2", required = false, defaultValue = "0") String value2,
                         @RequestParam(value = "operator", required = false) String operator,
                         Model model) {
 
