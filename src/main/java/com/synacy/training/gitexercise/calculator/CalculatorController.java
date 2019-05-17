@@ -18,12 +18,17 @@ public class CalculatorController {
             CalculateMethod method = CalculateMethod.of(operator);
             String[] parameters = new String[] { value1, value2 };
 
-            if (method != null) {
-                String result = method.calculate(parameters);
-                model.addAttribute("result", result);
-            }
+            calculate (model, parameters, method);
         }
 
         return "index";
+    }
+
+    private void calculate (Model model, String[] parameters, CalculateMethod method) {
+
+        if (method != null) {
+            String result = method.calculate(parameters);
+            model.addAttribute("result", result);
+        }
     }
 }
